@@ -3,7 +3,7 @@ Hey!
 First you do:
 npm install
 npm start
-and run on another port son-server --watch db.json -p 3001
+and run on another port json-server --watch db.json -p 3001
 
 Cool!
 
