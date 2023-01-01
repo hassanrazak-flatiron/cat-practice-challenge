@@ -1,16 +1,20 @@
 import React from "react";
 
-export default function CatCard() {
+export default function CatCard({cat,removeCat}) {
+
+  const{name,breed,image,score,id} = cat
+
+
   return (
     <div>
       {" "}
       <div className="card">
-        <h2>name</h2>
-        <img src="image" />
+        <h2>{name}</h2>
+        <img src={image} />
         <p>
-          Score: <strong>score</strong>
+          Score: <strong>{score}</strong>
         </p>
-        <button className="delete">😾</button>
+        <button onClick = {() => removeCat(id)}className="delete">😾</button>
       </div>
     </div>
   );

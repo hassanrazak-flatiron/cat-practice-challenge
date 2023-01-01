@@ -1,11 +1,28 @@
 import React from "react";
+import {useState} from 'react'
+export default function NewCatForm({
+      handleSubmit,name,image,breed,score,setName,setBreed,setImage,setScore 
+}) {
 
-export default function NewCatForm() {
+  const[showForm,setShowForm] = useState(true)
+
+  function removeForm(){
+    setShowForm(!showForm)
+  }
+
+
+  
+  
   return (
     <div className="formDiv">
-      <form className="newform">
+      {showForm ? 
+
+        <form onSubmit = {handleSubmit} className="newform">
         <label>Name:</label>
-        <input></input>
+        <input 
+        value = {name}
+        onChange = {(e) => setName(e.target.value)}
+        ></input>
         <label>Breed:</label>
         <input></input>
         <label>Image:</label>
@@ -14,6 +31,10 @@ export default function NewCatForm() {
         <input></input>
         <button id="tog">Add New Cat!</button>
       </form>
+      :
+      null
+    }
+    <button onClick = {removeForm}>Add A Cat</button>
     </div>
   );
 }
